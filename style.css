@@ -55,7 +55,7 @@ h1, h2 {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.fade-up {
+.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
