@@ -3,6 +3,7 @@
     --accent-color: #ff0000;
     --text-color: #ffffff;
     --card-bg: rgba(255, 255, 255, 0.1);
+    --card-hover-bg: rgba(255, 0, 0, 0.2);
 }
 
 * {
@@ -19,65 +20,35 @@ body {
     overflow-x: hidden;
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-}
-
-main {
-    position: relative;
-    padding: 3rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-h2 {
+h1, h2 {
     text-align: center;
     color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
+/* Grid & Cards */
 .skill-grid, .hobby-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    justify-content: center;
 }
 
 .skill-card, .hobby-item {
     background: var(--card-bg);
-    padding: 1.8rem;
+    padding: 2rem;
     border-radius: 12px;
     text-align: center;
-    transition: all 0.4s ease-in-out;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s ease-in-out, background 0.4s;
 }
 
 .skill-card:hover, .hobby-item:hover {
-    transform: translateY(-10px);
-    background: var(--accent-color);
-    color: var(--primary-color);
+    transform: translateY(-10px) scale(1.05);
+    background: var(--card-hover-bg);
 }
 
+/* Animations */
 .hidden {
     opacity: 0;
     transform: translateY(50px);
@@ -87,9 +58,4 @@ h2 {
 .fade-up {
     opacity: 1;
     transform: translateY(0);
-}
-
-footer {
-    text-align: center;
-    padding: 2rem 0;
 }
