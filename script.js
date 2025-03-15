@@ -2,7 +2,7 @@
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-up');
+            entry.target.classList.add('fade-in');
             observer.unobserve(entry.target);
         }
     });
@@ -35,6 +35,7 @@ scene.add(particleMesh);
 
 camera.position.z = 50;
 
+// Mouse Interaction
 document.addEventListener('mousemove', (event) => {
     let x = (event.clientX / window.innerWidth) * 2 - 1;
     let y = -(event.clientY / window.innerHeight) * 2 + 1;
